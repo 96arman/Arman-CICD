@@ -18,9 +18,9 @@ jobs:
     - name: Build
       run: dotnet build 
     - name: Publish
-      run: dotnet publish -o $ {{env.DOTNET_ROOT}}/publish
+      run: dotnet publish -o ${{env.DOTNET_ROOT}}/publish
     - name: Upload to Artifact Store
       uses: actions/upload-artifact@v3
       with:
         name: dotnet-publish
-        path: $ {{env.DOTNET_ROOT}}/publish
+        path: ${{env.DOTNET_ROOT}}/publish
