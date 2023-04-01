@@ -24,3 +24,14 @@ jobs:
       with:
         name: dotnet-publish
         path: ${{env.DOTNET_ROOT}}/publish
+  
+  deploy:
+    runs-on: self-hosted
+    needs: build
+    steps:
+      - name: Download Artifacts to VM
+        uses: actions/download-artifact@v3
+        with:
+          name: dotnet-publish
+          
+        
